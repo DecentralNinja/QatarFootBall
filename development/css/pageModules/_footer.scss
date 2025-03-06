@@ -1,0 +1,199 @@
+footer {
+    width: 100%;
+  padding: 50px 0px;
+  background-color: $purple;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include breakpoint (small) {
+    padding: 30px 0px;
+  }
+  #first {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0px 10px;
+    // border: 2px solid greenyellow;
+    display: flex;
+    position: relative;
+    @include breakpoint (small) {
+        flex-direction: column;
+    }
+    #leftSide {
+        width: 50%;
+    //   border: 2px solid orange;
+      padding-bottom: 200px;
+      padding-left: 50px;
+      @include breakpoint (medium) {
+        padding: 0px 0px 100px 30px;
+      }
+      @include breakpoint (small) {
+        padding: 0px 0px 30px 30px;
+        width: 100%;
+      }
+      @include breakpoint (smaller) {
+        padding: 0px 0px 30px 10px;
+      }
+      #logo {
+        height: 40px;
+        width: 130px;
+        background: #d9d9d9;
+      } //logo
+      p {
+        font-size: $para;
+        font-weight: 100;
+        width: 300px;
+        margin-top: 20px;
+        color: $white;
+      } //p
+      #socialMedia {
+        display: flex;
+        column-gap: 10px;
+        margin-top: 50px;
+        @include breakpoint (small) {
+            margin-top: 20px;
+        }
+        div {
+            width: fit-content;
+            border: 1px solid $white;
+            border-radius: 50%;
+            padding: 10px;
+            transition: background-color 0.2s ease-in-out;
+            i {
+                font-size: 17px;
+                font-weight: 300;
+                color: $white;
+            }
+            &:hover {
+                color: $Red;
+                background-color: $white;
+            }
+        } //div
+    } //socialMedia
+    } //leftSide
+    #rightSide {
+        width: 50%;
+        // border: 2px solid pink;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @include breakpoint (small) {
+            width: 100%;
+        }
+        #box {
+            padding: 50px 0px 0px 50px;
+            @include breakpoint (medium) {
+                padding: 30px 0px 0px 30px;
+            }
+            @include breakpoint (smaller) {
+                padding: 20px 0px 0px 10px;
+            }
+            h2 {
+                font-size: $para;
+                text-transform: uppercase;
+                color: $white;
+                font-weight: 400;
+            }
+            div {
+                display: flex;
+                flex-direction: column;
+                row-gap: 9px;
+                margin-top: 10px;
+                a {
+                    color: $white;
+                    text-decoration: none;
+                    font-weight: light;
+                    font-size: $para;
+                    @include breakpoint (smaller) {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        .right {
+            border-right: 2px solid $lightPurple;
+        }
+        .left {
+            border-left: 2px solid $lightPurple;
+        }
+        .top {
+            border-top: 2px solid $lightPurple;
+        }
+        .bottom {
+            border-bottom: 2px solid $lightPurple;
+        }
+    } //rightsIDE
+
+    #footBall {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        width: 400px;
+        height: 280px;
+    }
+  } //first
+  #second {
+    display: flex;
+    justify-content: center;
+    @include breakpoint (narrow) {
+        display: none;
+    }
+    #forCenter {
+        width: 100%;
+        max-width: 1400px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 40px;
+        border-top: 2px solid $lightPurple;
+        padding: 0px 10px;
+        padding-top: 20px;
+        @include breakpoint (medium) {
+            margin-top: 0;
+        }
+        ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 90%;
+            column-gap: 70px;
+            row-gap: 30px;
+            margin-top: 10px;
+            @include breakpoint (large) {
+                width: 90%;
+                // border: 2px solid pink;
+            }
+            @include breakpoint (small) {
+                width: 100%;
+            }
+            li {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                row-gap: 10px;
+                @include breakpoint (narrow) {
+                    row-gap: 5px;
+                }
+                img {
+                    width: 150px;
+                    @include breakpoint (smaller) {
+                        width: 100px;
+                    }
+                }
+                p {
+                    color: $white;
+                    font-size: $para;
+                    font-weight: 200;
+                    @include breakpoint (smaller) {
+                        font-size: $narrowText;
+                    }
+                }
+                #brand2 {
+                    width: 50px;
+                }
+            } //li
+        }//ul
+    } //forCenter
+  } //second
+} //footer

@@ -1,0 +1,57 @@
+@import "components/variables";
+@import "components/mixins";
+
+
+
+@import "pageModules/header";
+@import "pageModules/nav";
+@import "pageModules/main";
+@import "pageModules/footer";
+
+
+
+
+@font-face {  
+    font-family: 'CLAN0T-light';  
+    src: url('../imgs//fonts/NarrowThin.ttf') format('ttf');
+    font-weight: 200; // Narrow weight 
+    font-style: normal;  
+  }  
+
+@font-face {  
+    font-family: 'CLAN0T-normal';  
+    src: url('../imgs/fonts/ClanOT-NarrowBook.ttf') format('ttf');  
+    font-weight: 400; // Normal  
+    font-style: normal;  
+  }  
+  
+  @font-face {  
+    font-family: 'CLAN0T-bold';  
+    src: url('../imgs/fonts/ClanOT-NarrowMedium.ttf') format('ttf');  
+    font-weight: 700;  //bold
+    font-style: normal;  
+  } 
+
+  @font-face {  
+    font-family: 'CLAN0T-bolder';  
+    src: url('../imgs/fonts/ClanOT-NarrowBold.ttf') format('ttf'); 
+    font-weight: 700; // Bolder 
+    font-style: normal;  
+  }  
+  
+
+  body {
+    font-family: 'CLAN0T-normal', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'CLAN0T-bold', sans-serif;
+  }
+  
+  p {
+    font-family: 'CLAN0T-light', sans-serif;
+  }
+  
+  strong {
+    font-family: 'CLAN0T-bolder', sans-serif;
+  }

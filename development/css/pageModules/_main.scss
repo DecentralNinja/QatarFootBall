@@ -1,0 +1,909 @@
+main {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  // border: 2px solid orange;
+  #scroller {
+    padding: 10px;
+    ul {
+        display: flex;
+        column-gap: 15px;
+        animation: scroll 20s linear infinite;
+        li {
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            width: fit-content;
+            h5 {
+                width: 150px;
+            }
+        }
+    }
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  #section1 {
+    // border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    @include breakpoint (small) {
+      padding-bottom: 0;
+    }
+    #forCenter {
+      width: 100%;
+      max-width: 1400px;
+      // border: 2px solid orange;
+      padding: 0px 10px;
+      #firstDiv {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        @include breakpoint (small) {
+          flex-direction: column;
+          align-items: center;
+        }
+        #leftSide {
+          h2 {
+            font-size: $headi2;
+            color: $purple;
+            text-transform: uppercase;
+            @include breakpoint (medium) {
+              font-size: $hedi5;
+            }
+            @include breakpoint (narrow) {
+              font-size: $hedi6;
+              text-align: center;
+            }
+            span {
+              background: none;
+              color: transparent;
+              -webkit-text-stroke: 1px $purple;
+            }
+          } //h2
+          div {
+            margin-top: 20px;
+            display: flex;
+            column-gap: 13px;
+            @include breakpoint (small) {
+              justify-content: center;
+            }
+            button {
+              padding: 10px;
+              font-size: $btnText;
+              font-weight: 400;
+              border-radius: 10px;
+              color: $lightPurple;
+              text-transform: uppercase;
+              border: none;
+              background-color: #d2d2d2;
+              @include breakpoint (medium) {
+                font-size: $narrowText;
+                padding: 15px;
+              }
+            }
+            #active {
+              color: $white;
+              background-color: $purple;
+            }
+          }
+        } //leftSide
+        #rightSide {
+          @include breakpoint (medium) {
+            margin-top: 20px;
+            display: flex;
+            column-gap: 20px;
+          }
+          @include breakpoint (small) {
+            display: none;
+          }
+          button {
+            border: 2px solid $Red;
+            color: $Red;
+            background: none;
+            border-radius: 50%;
+            padding: 10px;
+            i {
+              font-size: 17px;
+            }
+          }
+          #active {
+            color: $white;
+            background: $Red;
+          }
+        }
+      } //firstDiv
+      #scrollContainer {
+        overflow: hidden;
+        margin-top: 20px;
+        @include breakpoint (small) {
+          scroll-behavior: smooth;
+        }
+        #secondDiv {
+          display: flex;
+          column-gap: 20px;
+          transition: transform 0.3s ease-in-out;
+          @include breakpoint (small) {
+            margin-top: 20px;
+          }
+          .Team {
+            width: 320px;
+            height: 270px;
+            border-radius: 12px;
+            background: rgba($color: $purpleLig, $alpha: 0.4);
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 2px solid $purpleLig;
+            @include breakpoint (medium) {
+              width: 280px;
+              height: 250px;
+            }
+            @include breakpoint (narrow) {
+              width: 350px;
+            }
+            #teamInfo {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              position: relative;
+              padding: 0px 40px;
+              @include breakpoint (narrow) {
+                padding: 0px 30px;
+              }
+              #date {
+                width: 176px;
+                height: 40px;
+                padding: 10px;
+                border-top: 2px solid $purple;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                display: flex;
+                align-items: center;
+                background: $white;
+                z-index: 2;
+                img {
+                  height: 28px;
+                  width: 28px;
+                }
+                span {
+                  color: $purple;
+                  font-size: $narrowText;
+                  margin-left: 10px;
+                }
+              } //date
+              #teamPlayers {
+                display: flex;
+                justify-content: center;
+                li {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  img {
+                    width: 92px;
+                    height: 92px;
+                  } //img
+                  h3 {
+                    color: $purple;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    font-size: $btnText;
+                    margin-top: 10px;
+                  } //h3
+                } //li
+                #left {
+                  @include breakpoint (narrow) {
+                    margin-right: 20px;
+                  }
+                } //left
+                #right {
+                  @include breakpoint (narrow) {
+                    margin-left: 20px;
+                  }
+                }
+                #versusIcon {
+                  color: $Red;
+                  font-weight: 600;
+                  background: $white;
+                  padding: 10px;
+                  border-radius: 50%;
+                  height: fit-content;
+                  margin-top: 30px;
+                }
+              } //teamPlayers
+              #graph {
+                position: absolute;
+                top: 0;
+                z-index: 0;
+              } //graph 
+            } //div
+            #Time {
+              width: 100%;
+              background: $white;
+              padding: 20px;
+              border-bottom-right-radius: 12px;
+              border-bottom-left-radius: 12px;
+              @include breakpoint (medium) {
+                padding: 10px;
+              }
+              div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                column-gap: 10px;
+                li {
+                  list-style-type: none;
+                  border-radius: 5px;
+                  padding: 10px 7px;
+                  border: 1px solid $lightPurple;
+                  color: $purple;
+                  font-weight: 600;
+                }
+                span {
+                  font-weight: 600;
+                  font-size: 20px;
+                }
+              } //div
+            } //Time
+          } //Team
+        } //secondDiv
+      } //scrollContainer
+    } //forCenter
+  } //section1
+  #section2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    padding-bottom: 30px;
+    #forCenter {
+      width: 100%;
+      max-width: 1400px;
+      padding: 0px 10px;
+      #firstDiv {
+        display: flex;
+        justify-content: space-between;
+        @include breakpoint (small) {
+          flex-direction: column;
+          align-items: center;
+        }
+        #leftSide {
+          h2 {
+            font-size: $headi2;
+            color: $purple;
+            text-transform: uppercase;
+            @include breakpoint (medium) {
+              font-size: $hedi5;
+            }
+            @include breakpoint (small) {
+              text-align: center;
+            }
+            @include breakpoint (narrow) {
+              font-size: $hedi6;
+            }
+          } //h2
+          #hollow {
+            background: none;
+            color: transparent;
+            -webkit-text-stroke: 1px $purple;
+          } //hollow
+        } //leftSide
+        #rightSide {
+          display: flex;
+          align-items: flex-end;
+          column-gap: 20px;
+          @include breakpoint (large) {
+            width: 50%;
+          }
+          @include breakpoint (small) {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+          }
+          p {
+            color: #6d5f7d;
+            font-size: $para;
+            font-weight: 300;
+            height: fit-content;
+            width: 500px;
+            @include breakpoint (small) {
+              text-align: center;
+              margin-top: 15px;
+              width: 90%;
+            }
+            @include breakpoint (narrow) {
+              width: 100%;
+            }
+          }
+          #buttons {
+            display: flex;
+            column-gap: 5px;
+            @include breakpoint (small) {
+              display: none;
+            }
+            button {
+              border: 2px solid $Red;
+              color: $Red;
+              background: none;
+              border-radius: 50%;
+              padding: 10px;
+              i {
+                font-size: 17px;
+              }
+            } //button
+            #active {
+              color: $white;
+              background: $Red;
+            }
+          }
+        } //rightSide
+      } //firstDiv
+      #scrollContainer2 {
+        overflow: hidden;
+        margin-top: 50px;
+        @include breakpoint (small) {
+          scroll-behavior: smooth;
+        }
+        @include breakpoint (medium) {
+          margin-top: 30px;
+        }
+        #secondDiv2 {
+          width:fit-content;
+          display: flex;
+          column-gap: 20px;
+          transition: transform 0.3s ease-in-out;
+          overflow: hidden;
+          border: none;
+          li {
+            width: 380px;
+            border: 2px solid #c0b8be;
+            list-style-type: none;
+            border-radius: 10px;
+            @include breakpoint (large) {
+              width: 320px;
+              height: 470px;
+            }
+            img {
+              height: 300px;
+              width: 100%;
+              @include breakpoint (large) {
+                height: 240px;
+              }
+            }
+            #CardContent {
+              padding: 10px 30px 10px 20px;
+              #date {
+                width: 176px;
+                height: 40px;
+                padding: 10px;
+                padding-left: 0;
+                display: flex;
+                align-items: center;
+                img {
+                  height: 28px;
+                  width: 28px;
+                }
+                span {
+                  color: $purple;
+                  font-size: 13px;
+                  margin-left: 10px;
+                }
+              } //date
+              h2 {
+                font-size: $hedi4;
+              }
+              #tags {
+                display: flex;
+                column-gap: 10px;
+                margin-top: 20px;
+                button {
+                  padding: 10px;
+                  color: $black;
+                  font-size: $narrowText;
+                  text-transform: uppercase;
+                  border-radius: 30px;
+                  background: none;
+                  @include breakpoint (large) {
+                    font-size: 10px;
+                    padding: 5;
+                  }
+                }
+              }
+            }
+          } //li
+        } //secondDiv
+      }
+    } //forCenter
+  } //section2
+  #section3 {
+    // border: 2px solid red;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    margin-top: 50px;
+    @include breakpoint (small) {
+      flex-direction: column;
+      height: 500px;
+    }
+    #leftSide {
+      width: 50%;
+      background-image: url("../imgs/rect.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      @include breakpoint (small) {
+        padding: 20px;
+        height: 50%;
+        width: 100%;
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+      }
+      #leftContent {
+        padding-left: 60px;
+        margin-top: 50px;
+        @include breakpoint (large) {
+          padding-left: 30px;
+        }
+        @include breakpoint (small) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 0px;
+          margin-top: 0;
+        }
+        h2 {
+          font-size: $headi2;
+          color: $white;
+          @include breakpoint (medium) {
+            font-size: $hedi5;
+          }
+          @include breakpoint (small) {
+            text-align: center;
+          }
+          @include breakpoint (narrow) {
+            font-size: $hedi6;
+          }
+        } //h2
+        #hollow {
+          background: none;
+          color: transparent;
+          -webkit-text-stroke: 1px $white;
+        } //hollow
+        p {
+          color: $white;
+          font-weight: 100;
+          width: 400px;
+          font-size: $para;
+          margin-top: 20px;
+          @include breakpoint (small) {
+            text-align: center;
+            width: 100%;
+          }
+        }
+        #btn {
+          background: $white;
+          width: fit-content;
+          display: flex;
+          column-gap: 10px;
+          border-radius: 5px;
+          margin-top: 20px;
+          button {
+            background: none;
+            border: none;
+            color: $purple;
+            font-size: $btnText;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 10px;
+          }
+          div {
+            border-left: 2px solid $purple;
+            padding: 10px 5px;
+            i {
+              font-size: 18px;
+            }
+          }
+        }
+      } //leftContent
+    } //leftSide
+    #rightSide {
+      width: 50%;
+      background-image: url("../imgs/pic6.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      @include breakpoint (small) {
+        height: 50%;
+        padding: 20px;
+        width: 100%;
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+      }
+      #rightContent {
+        display: flex;
+        margin-left: 60px;
+        column-gap: 20px;
+        @include breakpoint (large) {
+          margin-left: 30px;
+        }
+        @include breakpoint (small) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 0px;
+          margin-left: 0;
+        }
+        img {
+          height: 50px;
+          width: 50px;
+          @include breakpoint (small) {
+            margin-bottom: 10px;
+          }
+        }
+        div {
+          @include breakpoint (small) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          h2 {
+            font-size: $hedi3;
+            color: $white;
+            text-transform: uppercase;
+            @include breakpoint (small) {
+              text-align: center;
+            }
+            @include breakpoint (narrow) {
+              font-size: 25px;
+            }
+          }
+          p {
+            font-size: $para;
+            color: $white;
+            font-weight: 100;
+            width: 300px;
+            margin-top: 10px;
+            @include breakpoint (small) {
+              text-align: center;
+            }
+          }
+          button {
+            background: none;
+            border: none;
+            color: $white;
+            font-size: $btnText;
+            border-bottom: 2px solid $white;
+            text-transform: uppercase;
+            margin-top: 20px;
+            @include breakpoint (small) {
+              width: fit-content;
+            }
+          }
+        }
+      } //rightContent
+    } //rightSide
+  } //section3
+  #section4 {
+    margin-top: 50px;
+    padding: 30px 0px;
+    position: relative;
+    overflow: hidden;
+    background-image: url("../imgs/image 57.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    #forCenter {
+      width: 100%;
+       max-width: 1400px;
+       padding: 0px 10px;
+       @include breakpoint (small) {
+        padding: 0px 5px;
+       }
+      h2 {
+        font-size: $headi2;
+        color: $purple;
+        text-transform: uppercase;
+        @include breakpoint (medium) {
+          font-size: $hedi5;
+        }
+        @include breakpoint (small) {
+          text-align: center;
+        }
+        @include breakpoint (narrow) {
+          font-size: $hedi6;
+        }
+      } //h2
+      #hollow {
+        background: none;
+        color: transparent;
+        -webkit-text-stroke: 1px $purple;
+      } //hollow
+      #container {
+        // border: 2px solid white;
+        margin-top: 30px;
+        #btns {
+          display: flex;
+          @include breakpoint (small) {
+            justify-content: center;
+          }
+          button {
+            height: 45px;
+            padding: 5px;
+            width: 220px;
+            text-transform: uppercase;
+            color: $purple;
+            border: 1px solid $lightPurple;
+            background: $white;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            font-weight: 600;
+            @include breakpoint (large) {
+              width: fit-content;
+              height: 40px;
+              font-size: $narrowText;
+
+            }
+          } //button
+          #active {
+            background: $purple;
+            color: $white;
+          } //active
+        } //btns
+        #contain {
+          border: 2px solid yellow;
+          #tableContainer {
+            @include breakpoint (small) {
+              overflow-x: auto;
+              white-space: nowrap;
+            }
+            #bar {
+              width: 100%;
+              background-color: #f2f2f2;
+              display: flex;
+              justify-content: space-evenly;
+              padding: 15px 0px;
+              border-top-left-radius: 12px;
+              border-top-right-radius: 12px;
+              @include breakpoint (small) {
+                width: 865px;
+              }
+              li {
+                font-size: $narrowText;
+                font-weight: 600;
+                text-transform: uppercase;
+                list-style-type: none;
+                height: 100%;
+                width: 16%;
+                text-align: center;
+              } //li
+            } //bar
+            #table {
+              height: 100%;
+              width: 100%;
+              background-image: url("../imgs/rect2.png");
+              background-repeat: no-repeat;
+              background-size: cover;
+              padding: 5px;
+              border-bottom-right-radius: 12px;
+              border-bottom-left-radius: 12px;
+              @include breakpoint (small) {
+                width: 865px;
+                overflow-x: auto;
+                white-space: nowrap;
+              }
+              .row {
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                background-color: $white;
+                padding: 15px 0px;
+                border-radius: 12px;
+                margin: 10px;
+                border: 2px solid blueviolet;
+                @include breakpoint (smaller) {
+                  padding: 10px;
+                }
+                h4 {
+                  font-size: $hedi4;
+                  font-weight: lighter;
+                }
+                #flags {
+                  display: flex;
+                  align-items: center;
+                  .flag {
+                    width: 30px;
+                  }
+                  span {
+                    font-size: $para;
+                    font-weight: 600;
+                    margin-left: 10px;
+                  } //span
+                } //flags
+                #points {
+                  padding: 10px;
+                  width: 90px;
+                  text-align: center;
+                  background: #f4f1f3;
+                  border-radius: 30px;
+                  p {
+                    font-weight: 600;
+                    font-size: $para;
+                  } //p
+                } //points
+                #btn {
+                  display: flex;
+                  column-gap: 10px;
+                  div {
+                    height: fit-content;
+                    border-radius: 50%;
+                    background-color: #15aa9c;
+                    color: $white;
+                    font-weight: 600;
+                    // font-size: 14px;
+                    padding: 10px;
+                  }
+                  #red {
+                    background-color: #cc1a44;
+                  }
+                } //btn
+                .li {
+                  width: 16%;
+                  border: 2 solid red;
+                  list-style-type: none;
+                  display: flex;
+                  justify-content: center;
+                }
+                .liFirst {
+                  padding-right: 30px;
+                }
+                .liSecond {
+                  padding-left: 30px;
+                }
+              } //row
+            } //table
+          } //tableContainer
+        } //contain
+      } //container
+    } //forCenter
+  } //section4
+  #section5 {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    #forCenter {
+      width: 100%;
+      max-width: 1400px;
+      padding: 0px 10px;
+      // border: 2px solid red;
+      #heading {
+        display: flex;
+        justify-content: space-between;
+        @include breakpoint (small){
+          justify-content: center;
+        }
+        h2 {
+          font-size: $headi2;
+          color: $purple;
+          text-transform: uppercase;
+          @include breakpoint (medium) {
+            font-size: $hedi5;
+          }
+          @include breakpoint (small) {
+            text-align: center;
+          }
+          @include breakpoint (narrow) {
+            font-size: $hedi6;
+          }
+        } //h2
+        #hollow {
+          background: none;
+          color: transparent;
+          -webkit-text-stroke: 1px $purple;
+        } //hollow
+        #btns {
+          display: flex;
+          column-gap: 5px;
+          @include breakpoint (small) {
+            display: none;
+          }
+          button {
+            border: 2px solid $Red;
+            color: $Red;
+            background: none;
+            border-radius: 50%;
+            padding: 10px;
+            height: fit-content;
+            i {
+              font-size: 17px;
+            }
+          } //button
+          #active {
+            color: $white;
+            background: $Red;
+          } //active
+        } //btns
+      } //heading
+      #scrollContainer5 {
+        overflow: hidden;
+        margin-top: 30px;
+        @include breakpoint(small) {
+          scroll-behavior: smooth;
+        }
+        @include breakpoint (medium) {
+          margin-top: 30px;
+        }
+        #secondDiv5 {
+          width: fit-content;
+          display: flex;
+        column-gap: 20px;
+        transition: transform 0.3s ease-in-out;
+        overflow: hidden;
+          #box {
+            border-radius: 15px;
+            width: 350px;
+            @include breakpoint (small) {
+              width: 300px;
+            }
+            @include breakpoint (smaller) {
+              width: 260px;
+            }
+            #ImgBg {
+              width:fit-content;
+              position: relative;
+              img {
+                width: 100%;
+              }
+              #icon {
+                position: absolute;
+                top: 150px;
+                left: 10px;
+                border-radius: 50%;
+                padding: 10px;
+                background: $white;
+                @include breakpoint (small) {
+                  top: 130px;
+                  padding: 5px;
+                }
+                @include breakpoint (smaller) {
+                  top: 120px;
+                }
+                i {
+                  @include breakpoint (small) {
+                    font-size: $label;
+                  }
+                }
+              } //icon
+            } //ImgBg
+            #boxContent {
+              margin-top: 20px;
+              h4 {
+                font-size: $label;
+                font-weight: 600;
+                span {color: #8E2BAF;}
+                div {color: #8E2BAF;}
+              }//h4
+              h6 {
+                margin-top: 10px;
+                color: $black;
+                font-weight: 100;
+                font-size: $label;
+              }
+            } //boxContent
+          } //box
+        } //SecndDIV5
+      }//scrollContainer5
+    } //forCenter
+  } //section5
+} //main
