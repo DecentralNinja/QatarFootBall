@@ -59,7 +59,7 @@
 
 @mixin breakpoint($point) {
   @if $point == narrow {
-    @media (max-width: 400px) { @content; }
+    @media (max-width: 492px) { @content; }
   }
   @else if $point == smaller {
     @media (max-width: 748px) { @content; }

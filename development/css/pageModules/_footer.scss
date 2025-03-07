@@ -41,7 +41,7 @@ footer {
       } //logo
       p {
         font-size: $para;
-        font-weight: 100;
+        font-weight: 400;
         width: 300px;
         margin-top: 20px;
         color: $white;
@@ -73,7 +73,6 @@ footer {
     } //leftSide
     #rightSide {
         width: 50%;
-        // border: 2px solid pink;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         @include breakpoint (small) {
@@ -166,15 +165,72 @@ footer {
             @include breakpoint (small) {
                 width: 100%;
             }
+            @include breakpoint (smaller) {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, auto);
+                grid-template-areas:
+                  "item1 item2 item3"
+                  "item4 item5 item6"
+                  "item7 item8 .";
+                  justify-content: center;
+            }
             li {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: space-between;
                 row-gap: 10px;
-                @include breakpoint (narrow) {
+                @include breakpoint (smaller) {
                     row-gap: 5px;
                 }
+                &:nth-child(1) {
+                    @include breakpoint(smaller) {
+                      grid-area: item1;
+                    }
+                  }
+        
+                  &:nth-child(2) {
+                    @include breakpoint(smaller) {
+                      grid-area: item2;
+                    }
+                  }
+        
+                  &:nth-child(3) {
+                    @include breakpoint(smaller) {
+                      grid-area: item3;
+                    }
+                  }
+        
+                  &:nth-child(4) {
+                    @include breakpoint(smaller) {
+                      grid-area: item4;
+                    }
+                  }
+        
+                  &:nth-child(5) {
+                    @include breakpoint(smaller) {
+                      grid-area: item5;
+                    }
+                  }
+        
+                  &:nth-child(6) {
+                    @include breakpoint(smaller) {
+                      grid-area: item6;
+                    }
+                  }
+        
+                  &:nth-child(7) {
+                    @include breakpoint(smaller) {
+                      grid-area: item7;
+                    }
+                  }
+        
+                  &:nth-child(8) {
+                    @include breakpoint(smaller) {
+                      grid-area: item8;
+                    }
+                  }
                 img {
                     width: 150px;
                     @include breakpoint (smaller) {
@@ -186,7 +242,8 @@ footer {
                     font-size: $para;
                     font-weight: 200;
                     @include breakpoint (smaller) {
-                        font-size: $narrowText;
+                        font-size: $btnText;
+                        text-align: center;
                     }
                 }
                 #brand2 {

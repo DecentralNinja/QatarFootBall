@@ -312,7 +312,7 @@ header {
         p {
           margin-top: 10px;
           font-size: $para;
-          font-weight: lighter;
+          font-weight: 400;
           color: $white;
           @include breakpoint(medium) {
             width: 80%;
