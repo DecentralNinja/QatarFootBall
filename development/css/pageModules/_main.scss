@@ -4,7 +4,8 @@ main {
   width: 100%;
   // border: 2px solid orange;
   #scroller {
-    padding: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
     ul {
         display: flex;
         column-gap: 15px;
@@ -662,7 +663,6 @@ main {
           } //active
         } //btns
         #contain {
-          border: 2px solid yellow;
           #tableContainer {
             @include breakpoint (small) {
               overflow-x: auto;
